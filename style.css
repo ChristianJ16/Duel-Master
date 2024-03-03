@@ -1,0 +1,27 @@
+body {
+  background-color: pink;
+}
+/* 
+#p1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+#p2{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+#player-1{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+#player-2 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+} */
