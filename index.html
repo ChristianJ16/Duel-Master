@@ -5,30 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
-  
 </head>
 <body>
+  <h1 id="title">Duel Master</h1>
   <div id="turnIndicator">Player 1's turn</div>
+  <div id="battlefield">
+  <div id="p1-block">
     <h1 id="p1">Player 1</h1>
-    <div id="hp1">
+      <div id="hp1">
       <p>100 HP</p>
-    </div>
-    <div id="player-1">
-    <button id="attack1">Kick</button>
-    <button id="attack2">Punch</button>
-    <button id="attack3">Tackle</button>
-    <button id="attack4">Throw Rock</button>
+      </div>
+      <div id="player-1">
+      <button id="attack1">Kick</button>
+      <button id="attack2">Punch</button>
+      <button id="attack3">Tackle</button>
+      <button id="attack4">Throw Rock</button>
+    </div> 
   </div>
+  <div id="p2-block">
     <h1 id="p2">Player 2</h1>
     <div id="hp2">
       <p>100 HP</p>
+      </div>
+      <div id="player-2">
+      <button id="attack5">Kick</button>
+      <button id="attack6">Punch</button>
+      <button id="attack7">Tackle</button>
+      <button id="attack8">Throw Rock</button>
     </div>
-    <div id="player-2"></div>
-    <button id="attack5">Kick</button>
-    <button id="attack6">Punch</button>
-    <button id="attack7">Tackle</button>
-    <button id="attack8">Throw Rock</button>
   </div>
+</div>
   <button id="rematchButton" style="display: none;">Rematch</button>
   <script src="app.js"></script>
 </body>
