@@ -4,12 +4,17 @@ let currentPlayer = 1
 
 function switchTurn() {
   currentPlayer = currentPlayer === 1 ? 2 : 1
-  document.getElementById("turnIndicator").innerText = "Player " + currentPlayer + " 's turn"
+  document.getElementById("turnIndicator").innerText = "Player " + currentPlayer + "'s turn!"
 }
 
 function randomDamage() {
   return Math.floor(Math.random() * 20) + 1
 }
+
+function healthPot(){
+  return Math.floor(Math.random() * 10) + 1
+}
+
 
 function attack(player){
   if (currentPlayer !== player) {
@@ -31,7 +36,6 @@ function attack(player){
     if (hp1 <= 0) {
       endGame(2)
     return
-
   }
 }
   alert("Player " + player + " dealt " + damage + " damage!")
@@ -39,13 +43,45 @@ function attack(player){
   switchTurn()
 }
 
+function heal(player) {
+  if (currentPlayer !== player) {
+    alert("It's not your turn!")
+    return
+  }
+  if (hp1 && hp2 === 100) {
+    alert("You're at full HP!")
+    return
+  }
+  let heal = healthPot()
+
+  if(player === 1){
+    hp1 += heal
+    document.getElementById("hp1").innerText = hp1 + " HP"
+  } else {
+    hp2 += heal
+    document.getElementById("hp2").innerText = hp2 + " HP"
+  }
+  alert("Player " + player + " healed for " + heal + " HP")
+
+  switchTurn()
+}
+
+
+function reloadPage() {
+  window.location.reload()
+}
+
 function endGame(winner) {
   alert("Player " + winner + " wins!")
   document.getElementById("rematchButton").style.display = "block"
 }
 
+document.getElementById("rematchButton").addEventListener("click", function () {
+reloadPage()
+})
+
 document.getElementById("attack1").addEventListener("click", function() {
-  attack(1)
+  heal(1)
 })
 
 document.getElementById("attack2").addEventListener("click", function() {
@@ -61,7 +97,7 @@ document.getElementById("attack4").addEventListener("click", function() {
 })
 
 document.getElementById("attack5").addEventListener("click", function() {
-  attack(2)
+  heal(2)
 })
 
 document.getElementById("attack6").addEventListener("click", function() {
